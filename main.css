@@ -1,0 +1,351 @@
+
+            html{
+                min-width:1000px;
+            }
+            /* width */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+                background: #eeeeee; 
+            }
+
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                /* background: #888;  */
+                background: rgb(239, 142, 38); 
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: rgb(200, 100, 0); 
+            }
+
+            body {
+                position: relative; 
+                overflow-x:hidden;
+                padding: 0px;
+            }
+
+            .navbar {
+                background-color: #eeeeee;
+                box-shadow: 0px 2px 5px darkgray;
+                overflow: hidden;
+                position: fixed; /* Set the navbar to fixed position */
+                top: 0; /* Position the navbar at the top of the page */
+                left:0;
+                right:0;
+                margin:0;
+                z-index: 99; /* Stay on top */
+                width: 100%; /* Full width */
+            }
+
+            .nav-link.active {
+                color: black!important;
+                background: rgb(239, 142, 38)!important;
+            }
+            .nav-link {
+                color: rgb(200, 100, 0)!important;
+            }
+
+            #bodyBigText{
+                color:black;
+                filter: none;
+                height:280px;
+                padding-top:17%;
+                left:0;
+                z-index: 10;
+                right:0;
+                text-align: center;
+                width:100%;
+                position:absolute;
+            }
+
+            #text-1, #text-2, #text-3, #text-4, #text-5, #text-6, #text-7{
+                font-size:24px;
+                color: rgb(70, 70, 70);
+                line-height: 3;
+                font-family: 'Roboto Condensed', sans-serif;
+            }
+
+            .philosophy {
+                line-height: 2;
+            }
+
+            .member {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: 15px;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+                /* box-shadow: 2px 2px 5px darkgray; */
+                box-shadow: 0 0 5px darkgray;
+                transition: box-shadow 0.2s ease-out;
+                line-height: 2;
+            }
+
+            .member:hover {
+                /* box-shadow: 10px 10px 20px darkgray; */
+                box-shadow: 0 0 20px darkgray;
+            }
+
+            .member p {
+                text-align: left;
+                padding-left: 5%;
+                font-size: 20px;
+            }
+
+            .member li {
+                text-align: left;
+                padding-left: 5%;
+                font-size: 20px;    
+            }
+
+            /* Make the website extend horizontally to occupy full width */
+            .container-fluid{
+                padding:0px;
+                min-width:1000px;
+            }
+
+            #footer {
+                /* box-shadow: inset 0 20px 20px -20px darkgray; */
+                box-shadow: 0px -2px 5px darkgray;
+            }
+
+            .parallax-1 {
+                /* The image used */
+                background-image: url("images/parallax-1.jpg");
+                /* Full height */
+                min-height: 1000px; 
+                width:100%;
+                filter:brightness(50%);
+                position: absolute;
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+
+            .parallax-2 {
+                /* The image used */
+                background-image: url("images/parallax-2.jpg");
+                /* Full height */
+                min-height: 600px; 
+                filter: brightness(50%);
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .parallax-3 {
+                /* The image used */
+                background-image: url("images/parallax-3.jpg");
+                /* Full height */
+                min-height: 600px; 
+                filter: brightness(50%);
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .parallax-4 {
+                /* The image used */
+                background-image: url("images/parallax-4.jpg");
+                /* Full height */
+                min-height: 600px; 
+                filter: brightness(50%);
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .parallax-5 {
+                /* The image used */
+                background-image: url("images/parallax-5.jpg");
+                /* Full height */
+                min-height: 600px; 
+                filter: brightness(50%);
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .parallax-6 {
+                /* The image used */
+                background-image: url("images/parallax-6.jpg");
+                /* Full height */
+                min-height: 600px; 
+                filter: brightness(50%);
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .parallax-7 {
+                /* The image used */
+                background-image: url("images/parallax-7.jpg");
+                /* Full height */
+                min-height: 600px; 
+                filter: brightness(50%);
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            /* Create seven equal columns that floats next to each other */
+            .column {
+                /* float: left; */
+                margin: auto;
+                width: 13%;
+                padding: 0;
+            }
+
+            /* The lightbox (background) */
+            .lightbox {
+                display: none;
+                position: fixed;
+                z-index: 999;
+                padding-top: 30px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background: black;
+            }
+
+            /* lightbox Content */
+            .lightbox-content {
+                position: relative;
+                background: black;
+                margin: auto;
+                padding: 0;
+                width: 100%;
+                max-width: 1200px;
+            }
+
+            /* The Dismiss Button */
+            .close {
+                color: white;
+                position: absolute;
+                top: 5px;
+                right: 50px;
+                font-size: 100px;
+                /* font-weight: bold; */
+            }
+
+            .close:hover,
+            .close:focus {
+                color: rgb(100, 100, 100);
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            /* Hide the slides by default */
+            .mySlides {
+                display: none;
+            }
+
+            /* Next & previous buttons */
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 45%;
+                width: auto;
+                padding: 18px;
+                margin-top: -50px;
+                color: black !important;
+                font-size: 20px;
+                transition: 0.2s ease-out;
+                border-radius: 0 999px 999px 0;
+                user-select: none;
+                -webkit-user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+                right: 0;
+                border-radius: 999px 0 0 999px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(19, 19, 19, 0.8);
+                color: white !important;
+            }
+
+            /* Number text (on the top left corner) */
+            .numbertext {
+                color: #f2f2f2;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+
+            /* Caption text */
+            /* .caption-container {
+            text-align: center;
+            background-color: black;
+            padding: 2px 16px;
+            color: white;
+            } */
+
+            /* Image thumbnail */
+            img.demo {
+                opacity: 0.6;
+            }
+
+            .demo.active,
+            .demo:hover {
+                opacity: 1;
+            }
+
+            img.hover-shadow {
+                transition: 0.3s
+            }
+
+            #websiteTitle {
+                font-weight: 900;
+                padding-top:50px;
+                padding-bottom:50px;
+                width:100%;
+                padding-left:15%;
+                padding-right:15%;
+                background-color:rgba(255, 255, 255, 0.56);
+                box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.64);
+                text-shadow: 0px 0px 15px white;
+            }
+            
+            .hover-shadow:hover {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+            }

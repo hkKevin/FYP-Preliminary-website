@@ -1,0 +1,688 @@
+<!--By Pak Kiu Leung (Kevin)-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSIT321 Preliminary Website</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    <!--Let browser know website is optimized for mobile-->
+        <link rel="icon" type="image/png" href="http://www.sydneytrains.info/img/favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet"> <!-- font family for title-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet"> <!-- font family for body and navbar items-->     
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">  <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"><!-- Link to the CSS animation library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><!-- jQuery library -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script><!-- Latest compiled JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script><!-- the wow animation JavaScript -->
+        <link rel="stylesheet" type="text/css" href="main.css">
+        
+        
+        <script type="application/javascript">
+            
+            
+            new WOW().init();   //initialize the wow.js animation
+
+            // Open the lightbox
+            function openLightbox() {
+                document.getElementById('mylightbox').style.display = "block";
+            }
+
+            // Close the lightbox
+            function closeLightbox() {
+                document.getElementById('mylightbox').style.display = "none";
+            }
+
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Next/previous controls
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            // Thumbnail image controls
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                var captionText = document.getElementById("caption");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+                captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+        </script>
+
+
+
+
+        <script type="application/javascript">
+            //scroll back to top smoothly when .navbar-brand is pressed
+            $(function(){
+                $(".navbar-brand").click(function(){ 
+                    $("html, body").animate({ scrollTop: 0 }, 1000); 
+                    return false; 
+                });       
+            }) 
+
+            //Scrollspy keep updating #navbar
+            $("body").scrollspy({ target: "#navbar" }) 
+        
+            // Add smooth scrolling to all menu links
+            $(document).ready(function(){
+                // whenever user press any link
+                $("a").on('click', function(event) {
+
+                    // Make sure this.hash is not empty before overriding default behavior
+                    if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
+
+                        // Store hash
+                        var hash = this.hash;
+
+                        // Using jQuery's animate() method to add smooth page scroll
+                        $('html, body').animate({
+                            // scrollTop: $(hash).offset().top
+                            scrollTop: $(hash).offset().top
+                        }, 1000, function(){
+
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        });
+                    } // End if
+                }); // End onclick function
+            }); // End document-ready function
+        </script>
+        
+    </head>
+    <body data-spy="scroll" data-target="#navbar" data-offset="10"> <!--Spy on the whole website-->
+        <div class="container-fluid">
+            <!--Naviagtion Bar-->
+            <nav id="navbar" class="navbar navbar-light">
+                <a class="navbar-brand btn" style="font-family: 'Roboto Condensed', sans-serif; font-size: 26px;" role="button">Live Timetable Analysis Project for Sydney Trains</a>
+                <ul class="nav nav-pills" style="font-family: 'Roboto Condensed', sans-serif; font-size: 20px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#text-1">Knowledge of Client &amp; Issues</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#text-2">Project Aims</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#text-3">Target Market</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#text-4">Design Methodology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#text-5">Development Environments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#text-6">Product Promotion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#text-7">About Us</a>
+                    </li>
+                </ul>
+            </nav>
+            <div id="testBlock">
+                <div id="bodyBigText" class="wow fadeInDown display-1">
+                    
+                    <div id="websiteTitle">
+                        Welcome to the Sydney Trains Project Site!
+                    </div>
+                
+                </div>
+                <video id="websiteVideo" width="100%;" autoplay loop muted>
+                    <source  src="sydneytrains.mp4" type="video/mp4">
+                </video>
+                
+            </div>
+
+                
+            <div id="text-1" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgb(255, 255, 255);">
+                <div class="row">
+                    <h3 class="col-sm-12 col-md-12 col-lg-12" style="padding-left:5%">The Client – Sydney Trains</h3>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-7" style="padding-left:5%">
+                        <ul>
+                            <li>A passenger rail network serving the city of Sydney, NSW and controlled by the state government</li>
+                            <li>Covers over 815 km and 178 stations over 8 lines</li>
+                            <li>Runs 21 hours a day, every 3 min at major stations, every 15 minutes at most minor stations</li>
+                            <li>90% customer satisfaction rating with 93.4% peak punctuality and 92% average</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-3" style="padding-left:12%; padding-top:5%">
+                        <img src="images/nsw_transport_trains_logo.png" alt="Sydney Trains logo" width="300">
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top:5%">
+                    <h3 class="col-sm-12 col-md-12 col-lg-12" style="padding-left:5%">Sydney Trains’ Issues</h3>
+                </div>
+                <br>
+                <div class="row" style="padding-bottom:10%;">
+                    <div class="col-sm-12 col-md-5 col-lg-6 wow fadeInLeft" data-wow-delay="0s" style="padding-left:5%">
+
+                        <ul>
+                            <li>In December 2017, the NSW Government announced an overhaul of the Sydney Trains Timetable</li>
+                            <li>Customer numbers forecast to increase by 21% over 3 years</li>
+                            <li>Lead to increase of peak services to full track capacity</li>
+                            <li>New timetable allows for no opportunity to recover from incidents</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-5 col-lg-6 wow fadeInRight" data-wow-delay="0.4s" style="padding-left:10%">
+                        <ul>
+                            <li>In January 2018, staff shortages and bad weather crippled the network</li>
+                            <li>Delays spanned two days with little relief or recovery</li>
+                            <li>This lead to an inquiry from the NSW government over the new timetable</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="parallax-2"></div>
+
+            <div id="text-2" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgb(255, 255, 255);">
+                <div class="row">
+                    <h3 class="col-sm-12 col-md-12 col-lg-12 wow fadeInUp" style="padding-left:5%">Project Aims</h3>
+                </div>
+                <br>
+                <div class="row" style="padding-bottom:10%;">
+                    <div class="col-sm-12 col-md-12 col-lg-12 wow fadeInUp" style="padding-left:5%">
+                        <ul>
+                            <li>Analyze and compare the static timetable to real-time updates and generate relevant deliverables</li>
+                            <li style="margin-left:80px;">Such as tools for further analysis and visualization of decision making</li>
+                            <li>Represent data in a creative and insightful formats</li>
+                            <li>Provide live analysis of the current data</li>
+                            <li>Propose a solution that will increase the punctuality of the whole network</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="parallax-3"></div>
+
+            <div id="text-3" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
+                <div class="row">
+                    <h3 class="col-sm-12 col-md-12 col-lg-10 wow fadeIn" style="padding-left:5%">Target Market</h3>
+                </div>
+                <br>
+                <div class="row wow fadeIn">
+                    <div class="col-sm-12 col-md-5 col-lg-6" style="padding-left:5%">
+
+                        <ul>
+                            <li>Fleet Utilisation Effectiveness</li>
+                            <li>Live Data Analysis</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-5 col-lg-6" style="padding-right:0%;">
+                        <ul>
+                            <li>Live fleet tracking abilities</li>
+                            <li>Delay Management Systems</li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+                <div class="row wow fadeInUp">
+                    <p class="col-sm-12 col-md-3 col-lg-6 text-center">Airlines</p>
+                    <p class="col-sm-12 col-md-3 col-lg-6 text-center">Postage Industry</p>
+                </div>
+                <div class="row wow fadeInUp">
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:8%; padding-top:2%">
+                        <img src="images/Qantas-Logo.png" alt="Qantas logo" width="200">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:15%; padding-top:2%">
+                        <img src="images/VirginAustralia.png" alt="Virgin logo" width="100">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:12%; padding-top:2%">
+                        <img src="images/Emirates-logo.png" alt="Emirates logo" width="120">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:20%; padding-top:1%">
+                        <img src="images/auspost.png" alt="Australia Post logo" width="150">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:14%; padding-top:2%">
+                        <img src="images/ups.png" alt="UPS logo" width="80">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:10%; padding-top:2%">
+                        <img src="images/FedEx.png" alt="FedEx logo" width="120">
+                    </div>
+                </div>
+                <br><br>
+                <div class="row wow fadeInUp">
+                    <p class="col-sm-12 col-md-3 col-lg-6 text-center">Passenger Rail Transportation</p>
+                    <p class="col-sm-12 col-md-3 col-lg-6 text-center">Transportation &amp; Logistics Industry</p>
+                </div>
+                <div class="row wow fadeInUp">
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:10%; padding-top:2%">
+                        <img src="images/nsw_transport_trains_logo.png" alt="Sydney Train logo" width="180">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:15%; padding-top:2%">
+                        <img src="images/London-Underground.png" alt="Underground logo" width="80">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:12%; padding-top:2%">
+                        <img src="images/Metro_Trains_Melbourne_Logo.png" alt="Melbourne Metro logo" width="80">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:18%; padding-top:0%">
+                        <img src="images/linfox-logo.png" alt="LINFOX Post logo" width="150">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:14%; padding-top:2%">
+                        <img src="images/Shell_Logo.png" alt="Shell logo" width="90">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:12%; padding-top:1%">
+                        <img src="images/BP-Logo.png" alt="BP logo" width="70">
+                    </div>
+                </div>
+                <br><br>
+                <div class="row wow fadeInUp">
+                    <p class="col-sm-12 col-md-3 col-lg-6 text-center">Passenger Bus Transportation</p>
+                    <p class="col-sm-12 col-md-3 col-lg-6 text-center">Heavy Rail Industry</p>
+                </div>
+                <div class="row wow fadeInUp" style="padding-bottom:10%;">
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:8%; padding-top:2%">
+                        <img src="images/VEOLIA.png" alt="VEOLIA logo" width="150">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:14%; padding-top:2%">
+                        <img src="images/carbridge-logo.png" alt="CARBRIDGE logo" width="120">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:12%; padding-top:2%">
+                        <img src="images/logo-sydney_buses.jpg" alt="Sydney bus logo" width="180">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:22%; padding-top:2%">
+                        <img src="images/Rio_Tinto.png" alt="Rio Tinto Post logo" width="120">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:12%; padding-top:2%">
+                        <img src="images/Pacific_National_logo.png" alt="Pacific National logo" width="150">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-1" style="padding-left:14%; padding-top:2%">
+                        <img src="images/Genesee_&_Wyoming.png" alt="Genesee and Wyoming logo" width="120">
+                    </div>
+                </div>
+            </div> <!--#text-3-->
+
+            <div class="parallax-4"></div>
+
+            <div id="text-4" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
+                <div class="row wow fadeInLeft">
+                    <h2 class="col-sm-12 col-md-12 col-lg-12" style="padding-left:5%">Design Methodology - Agile</h2>
+                </div>
+                <br>
+                <div class="row" style="padding-bottom:10%;">
+                    <div class="col-sm-12 col-md-12 col-lg-7 wow fadeInLeft" style="padding-left:5%">
+                        <ul>
+                            <li>Allows for iterative design with fortnightly deliverables</li>
+                            <li>Client satisfaction by continuous delivery of useful software</li>
+                            <li>Client feedback has the ability to narrow scope and reduce miscommunications</li>
+                            <li>Issues are raised early, leading to an early solution and a reduction in lost productivity</li>
+                            <li>Adaption of client changes allows for higher client satisfaction</li>
+                            <li>Scope changes can be considered properly</li>                            
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-3 wow fadeInRight" style="padding-left:0%;">
+                        <img  src="images/agile.png" alt="Image of Agile development methodology" width="700">
+                    </div>
+                </div>                
+            </div>
+
+            <div class="parallax-5"></div>
+
+            <div id="text-5" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
+                <div class="row wow fadeIn">
+                    <h2 class="col-sm-12 col-md-12 col-lg-12" style="padding-left:5%">Development Environments</h2>
+                </div>
+                <br>
+                <div class="row wow fadeInUp">
+                    <h4 class="col-sm-12 col-md-12 col-lg-12" style="padding-left:5%">HTML, CSS &amp; JavaScript Architecture:</h4>
+                </div>
+                <div class="row wow fadeInUp">
+                    <div class="col-sm-12 col-md-12 col-lg-7" style="padding-left:5%;">
+                        <ul>
+                            <li>End users of Sydney Trains will predominantly access the system through desktop</li>
+                            <li>More rounded and uniform user experience</li>
+                            <li>Updates and rollouts are instantaneous and do not require clients to update</li>
+                            <li>Cross compatible between devices and operating systems</li>
+                            <li>Streamlined development – less focus on cross-developmental issues</li> 
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-5 wow fadeInUp" style="padding-left:10%; padding-top:2%">
+                        <img src="images/html5-js-css3-logo-png.png" alt="image of HTML, CSS and JS" width="400">
+                    </div>                    
+                </div>
+                <br>
+                <div class="row wow fadeInUp">
+                    <h4 class="col-sm-12 col-md-12 col-lg-12" style="padding-left:47%">Database - MySQL:</h4>
+                </div>
+                <div class="row wow fadeInUp">
+                    <div class="col-sm-12 col-md-12 col-lg-5" style="padding-top:5%;padding-left:20%;">
+                        <img src="images/mysql-logo.png" alt="image of MySQL" width="200">
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-7" style="padding-left:5%;">
+                        <ul>
+                            <li>Provides a rich query set needed for our in-depth data analysis</li>
+                            <li>Distributive, Scalability and Redundancy features of NoSQL databases do not overcome drawbacks</li>
+                            <li>Data collected works well in a relational model</li>
+                            <li>ACID features highly favourable</li>
+                            <li>Open Source</li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+                <div class="row wow fadeInUp">
+                    <h4 class="col-sm-12 col-md-12 col-lg-12" style="padding-left:5%">BackEnd - NodeJS:</h4>
+                </div>
+                <div class="row wow fadeInUp">
+                    <div class="col-sm-12 col-md-12 col-lg-7" style="padding-left:5%;">
+                        <ul>
+                            <li>Event Driven</li>
+                            <li>Non-Blocking I/O Model</li>
+                            <li>Lightweight &amp; Efficient</li>
+                            <li>Google’s V8 Engine &amp; compilation of JavaScript directly into native machine code allows for quick processing speeds</li>
+                            <li>Library-rich with an easy to use package manager</li> 
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-5" style="padding-left:10%; padding-top:5%">
+                        <img src="images/node-js-logo.png" alt="image of NodeJS" width="300">
+                    </div>                    
+                </div>
+                <br>
+                <div class="row wow fadeInUp">
+                    <h4 class="col-sm-12 col-md-12 col-lg-12" style="padding-left:47%">JSON Server:</h4>
+                </div>
+                <div class="row wow fadeInUp" style="padding-bottom:10%;">
+                    <div class="col-sm-12 col-md-12 col-lg-5" style="padding-top:5%;padding-left:20%;">
+                        <img src="images/json.png" alt="image of JSON" width="200">
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-7" style="padding-left:5%;">
+                        <ul>
+                            <li>Regular updates of data allows for a live-view</li>
+                            <li>Increased page customisation from the user</li>
+                            <li>Multi-tiered system split of interface and data retrieval</li>
+                            <li style="margin-left:80px;">Allows for upgrades to be made independently</li>
+                            <li>Versatility in data presentation and object notation</li>
+                        </ul>
+                    </div>
+                </div>                  
+            </div>
+
+            <div class="parallax-6"></div>
+
+            <div id="text-6" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
+                <div class="row">
+                    <h2 class="col-sm-12 col-md-12 col-lg-12 wow fadeInLeft" style="padding-left:5%">Product Promotion</h2>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-7 wow fadeInLeft" style="padding-left:5%">
+                        <ul>
+                            <li>The system allows Sydney Trains users to schedule trains more accurately</li>
+                            <li>Preparing for potential disruptions through analysis of past data</li>
+                            <li>Aiding Sydney Trains to ensure on time performance and reduce delays across the network</li>
+                            <li>These benefits will be extended to customers</li>
+                            <li style="margin-left:80px;">who expecting and depending on the on-time arrival and departure of their services</li>                            
+                        </ul>
+                    </div>
+                </div>   
+
+                <br>
+
+                <!-- Images used to open the lightbox -->
+                <div class="row" style="padding-bottom:10%; padding-left: 2%;">
+                    <div class="column wow fadeInUp">
+                        <img src="images/system-1.png" onclick="openLightbox();currentSlide(1)" class="hover-shadow" style="width:200px">
+                    </div>
+                    <div class="column wow fadeInUp" data-wow-delay="0.1s">
+                        <img src="images/system-2.png" onclick="openLightbox();currentSlide(2)" class="hover-shadow" style="width:200px">
+                    </div>
+                    <div class="column wow fadeInUp" data-wow-delay="0.2s">
+                        <img src="images/system-3.png" onclick="openLightbox();currentSlide(3)" class="hover-shadow" style="width:200px">
+                    </div>
+                    <div class="column wow fadeInUp" data-wow-delay="0.3s">
+                        <img src="images/system-4.png" onclick="openLightbox();currentSlide(4)" class="hover-shadow" style="width:200px">
+                    </div>
+                    <div class="column wow fadeInUp" data-wow-delay="0.4s">
+                        <img src="images/system-5.png" onclick="openLightbox();currentSlide(5)" class="hover-shadow" style="width:200px">
+                    </div>
+                    <div class="column wow fadeInUp" data-wow-delay="0.5s">
+                        <img src="images/system-6.png" onclick="openLightbox();currentSlide(6)" class="hover-shadow" style="width:200px">
+                    </div>
+                    <div class="column wow fadeInUp" data-wow-delay="0.6s">
+                        <img src="images/system-7.png" onclick="openLightbox();currentSlide(7)" class="hover-shadow" style="width:200px">
+                    </div>
+                </div>
+
+                <!-- The lightbox/Lightbox -->
+                <div id="mylightbox" class="lightbox">
+                    <span class="close cursor" onclick="closeLightbox()">&times;</span>
+                    <div class="lightbox-content">
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 7</div>
+                            <img src="images/system-1.png" style="width:1200px; height: 700px;">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 7</div>
+                            <img src="images/system-2.png" style="width:1200px; height: 700px;">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 7</div>
+                            <img src="images/system-3.png" style="width:1200px; height: 700px;">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">4 / 7</div>
+                            <img src="images/system-4.png" style="width:1200px; height: 700px;">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">5 / 7</div>
+                            <img src="images/system-5.png" style="width:1200px; height: 700px;">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">6 / 7</div>
+                            <img src="images/system-6.png" style="width:1200px; height: 700px;">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">7 / 7</div>
+                            <img src="images/system-7.png" style="width:1200px; height: 700px;">
+                        </div>
+
+                        <!-- Next/previous controls -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                        <!-- Caption text -->
+                        <!-- <div class="caption-container">
+<p id="caption"></p>
+</div> -->
+                        <br>
+
+                        <!-- Thumbnail image controls -->
+                        <div class="row">
+                            <div class="column">
+                                <img class="demo" src="images/system-1.png" onclick="currentSlide(1)" alt="a" style="width: 160px; height: 100px;">
+                            </div> 
+
+                            <div class="column"> 
+                                <img class="demo" src="images/system-2.png" onclick="currentSlide(2)" alt="b" style="width: 160px; height: 100px;">
+                            </div> 
+
+                            <div class="column"> 
+                                <img class="demo" src="images/system-3.png" onclick="currentSlide(3)" alt="c" style="width: 160px; height: 100px;">
+                            </div> 
+
+                            <div class="column"> 
+                                <img class="demo" src="images/system-4.png" onclick="currentSlide(4)" alt="d" style="width: 160px; height: 100px;">
+                            </div> 
+                            <div class="column"> 
+                                <img class="demo" src="images/system-5.png" onclick="currentSlide(5)" alt="b" style="width: 160px; height: 100px;">
+                            </div> 
+
+                            <div class="column"> 
+                                <img class="demo" src="images/system-6.png" onclick="currentSlide(6)" alt="c" style="width: 160px; height: 100px;">
+                            </div> 
+
+                            <div class="column"> 
+                                <img class="demo" src="images/system-7.png" onclick="currentSlide(7)" alt="d" style="width: 160px; height: 100px;">
+                            </div> 
+                        </div>  <!--.row-->
+
+                    </div>  <!--.lightbox-content-->
+                </div>  <!--#mylightbox .lightbox-->
+
+            </div>  <!--#text-6-->
+
+            <div class="parallax-7"></div>
+
+            <div id="text-7" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
+                <div class="row wow fadeIn">
+                    <h2 class="col-sm-12 col-md-12 col-lg-12" style="padding-left:5%">About Us</h2>
+                </div>
+                <br>
+                <div class="row wow fadeInUp" data-wow-delay="0.1s">
+                    <h4 class="philosophy col-sm-12 col-md-12 col-lg-8 offset-lg-2" style="padding-left:5%; text-align: center;">Hi!<br>We are <strong>The Sydney Trains Project Group</strong>.</h4>
+                </div>
+                <div class="row wow fadeInUp" data-wow-delay="0.2s">
+                    <h4 class="philosophy col-sm-12 col-md-12 col-lg-8 offset-lg-2" style="padding-left:5%; text-align: center;">We are dedicated to developing a web application, capable of analysing and visualising data, to best serve Sydney Trains in their attempt to increase timetable reliability.</h4>
+                </div>
+                
+
+                <br><br><br>
+
+
+                <div class="row">
+                    <div class="member col-sm-12 col-md-12 col-lg-2 offset-lg-1 wow fadeInUp">
+                        <h5><strong>Benjamin Goldsmith</strong></h5>
+                        <br>
+                        <p>Roles:</p>
+                        <ul>
+                            <li>Team leader</li>
+                            <li>Back-End developer</li>
+                            <li>Tester</li>
+                        </ul>
+                        <br>
+                        <p>Technical Experience:</p>
+                        <ul>
+                            <li>HTML &amp; CSS</li>
+                            <li>AJAX &amp; JSON</li>
+                            <li>PHP</li>
+                            <li>JavaScript</li>
+                            <li>NodeJS</li>
+                            <li>Python</li>
+                            <li>Apache Web Server</li>
+                            <li>MySQL</li>
+                            <li>C++</li>
+                            <li>Java</li>
+                            <li>Cassandra DB</li>
+                            <li>MongoDB</li>
+                            <li>Team Leader at Work (Airport)</li>
+                            <li>Experience in Transport Industry</li>
+                        </ul>
+                    </div>
+                    <div class="member col-sm-12 col-md-12 col-lg-2 offset-lg-1 wow fadeInUp" data-wow-delay="0.1s">
+                        <h5><strong>Daniel Maric</strong></h5>
+                        <br>
+                        <p>Roles:</p>
+                        <ul>
+                            <li>Database designer</li>
+                            <li>Tester</li>
+                        </ul>
+                        <br>
+                        <p>Technical Experience:</p>
+                        <ul>
+                            <li>HTML &amp; CSS</li>
+                            <li>AJAX &amp; JSON</li>
+                            <li>JavaScript</li>
+                            <li>Python</li>
+                            <li>MySQL</li>
+                            <li>C++</li>
+                            <li>Java</li>
+                            <li>MongoDB</li>
+                        </ul>
+                    </div>
+                    <div class="member col-sm-12 col-md-12 col-lg-2 offset-lg-1 wow fadeInUp" data-wow-delay="0.4s">
+                        <h5><strong>Pak Kiu Leung</strong></h5>
+                        <br>
+                        <p>Roles:</p>
+                        <ul>
+                            <li>Front-End designer/ developer</li>
+                            <li>Tester</li>
+                        </ul>
+                        <br>
+                        <p>Technical Experience:</p>
+                        <ul>
+                            <li>HTML &amp; CSS &amp; Bootstrap</li>
+                            <li>AJAX &amp; JSON</li>
+                            <li>JavaScript</li>
+                            <li>MySQL</li>
+                            <li>Java</li>
+                            <li>RapidMiner (Data Analytics)</li>
+                            <li>Swift</li>
+                        </ul>
+                    </div>
+                    <div class="member col-sm-12 col-md-12 col-lg-2 offset-lg-1 wow fadeInUp" data-wow-delay="0.6s">
+                        <h5><strong>Bazhena Dementyeva</strong></h5>
+                        <br>
+                        <p>Roles:</p>
+                        <ul>
+                            <li>Data Analyst</li>
+                            <li>Tester</li>
+                        </ul>
+                        <br>
+                        <p>Technical Experience:</p>
+                        <ul>
+                            <li>HTML &amp; CSS</li>
+                            <li>AJAX &amp; JSON</li>
+                            <li>JavaScript</li>
+                            <li>Python</li>
+                            <li>MySQL</li>
+                            <li>C++</li>
+                            <li>SPSS (Data Analytics)</li>
+                        </ul>
+                    </div>
+
+                </div>  <!--4 teammate cards-->
+
+                <br><br>
+
+                <div class="wow fadeIn" data-wow-delay="0.5s" style="text-align: center; padding-bottom:10%;">
+                    <h2>Email us for more information: <strong><a href="mailto:csit321sydneytrainsproject@gmail.com">csit321sydneytrainsproject@gmail.com</a></strong></h2>
+                    <h5>We will respond as soon as possible.</h5>
+                </div>
+
+            </div>  <!--#text-7-->
+
+
+        </div> <!--.container-fluid-->
+
+
+
+
+        <!--Footer-->
+        <div class="py-3 text-center" id="footer" style="background-color: #eeeeee">
+            © 2018 The Sydney Trains Project Group &#0149; All rights reserved
+        </div> 
+
+    </body>
+    <script>
+        var vid = document.getElementById("websiteVideo");
+            vid.onloadeddata = function() {
+                vid.play();
+            };
+    </script>
+</html>
