@@ -1,7 +1,3 @@
-var vid = document.getElementById("websiteVideo");
-vid.onloadeddata = function() {
-    vid.play();
-};
 
 new WOW().init();   //initialize the wow.js animation
 
