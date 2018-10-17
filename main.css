@@ -63,7 +63,13 @@
                 position:absolute;
             }
 
-            #text-1, #text-2, #text-3, #text-4, #text-5, #text-6, #text-7{
+            #knowledgeOfClientAndIssues,
+            #projectAims,
+            #targetMarket,
+            #designMethodology,
+            #developmentEnvironments,
+            #productPromotion,
+            #aboutUs{
                 font-size:24px;
                 color: rgb(70, 70, 70);
                 line-height: 3;
@@ -305,20 +311,13 @@
 
             /* Number text (on the top left corner) */
             .numbertext {
-                color: #f2f2f2;
+                color: black;
                 font-size: 12px;
                 padding: 8px 12px;
-                position: absolute;
-                top: 0;
+                position: fixed;
+                bottom: 200px;
+                right: 360px;
             }
-
-            /* Caption text */
-            /* .caption-container {
-            text-align: center;
-            background-color: black;
-            padding: 2px 16px;
-            color: white;
-            } */
 
             /* Image thumbnail */
             img.demo {

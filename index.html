@@ -2,10 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>CSIT321 Preliminary Website</title>
+        <title>CSIT321 Preliminary Website - The Sydney Trains Project Group</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">    <!--Let browser know website is optimized for mobile-->
-        <link rel="icon" type="image/png" href="http://www.sydneytrains.info/img/favicon.ico">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet"> <!-- font family for title-->
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet"> <!-- font family for body and navbar items-->     
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">  <!-- Latest compiled and minified CSS -->
@@ -14,96 +15,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script><!-- Latest compiled JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script><!-- the wow animation JavaScript -->
         <link rel="stylesheet" type="text/css" href="main.css">
-        
-        
-        <script type="application/javascript">
-            
-            
-            new WOW().init();   //initialize the wow.js animation
-
-            // Open the lightbox
-            function openLightbox() {
-                document.getElementById('mylightbox').style.display = "block";
-            }
-
-            // Close the lightbox
-            function closeLightbox() {
-                document.getElementById('mylightbox').style.display = "none";
-            }
-
-            var slideIndex = 1;
-            showSlides(slideIndex);
-
-            // Next/previous controls
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
-            }
-
-            // Thumbnail image controls
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-                var i;
-                var slides = document.getElementsByClassName("mySlides");
-                var dots = document.getElementsByClassName("demo");
-                var captionText = document.getElementById("caption");
-                if (n > slides.length) {slideIndex = 1}
-                if (n < 1) {slideIndex = slides.length}
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex-1].style.display = "block";
-                dots[slideIndex-1].className += " active";
-                captionText.innerHTML = dots[slideIndex-1].alt;
-            }
-        </script>
-
-
-
-
-        <script type="application/javascript">
-            //scroll back to top smoothly when .navbar-brand is pressed
-            $(function(){
-                $(".navbar-brand").click(function(){ 
-                    $("html, body").animate({ scrollTop: 0 }, 1000); 
-                    return false; 
-                });       
-            }) 
-
-            //Scrollspy keep updating #navbar
-            $("body").scrollspy({ target: "#navbar" }) 
-        
-            // Add smooth scrolling to all menu links
-            $(document).ready(function(){
-                // whenever user press any link
-                $("a").on('click', function(event) {
-
-                    // Make sure this.hash is not empty before overriding default behavior
-                    if (this.hash !== "") {
-                        // Prevent default anchor click behavior
-                        event.preventDefault();
-
-                        // Store hash
-                        var hash = this.hash;
-
-                        // Using jQuery's animate() method to add smooth page scroll
-                        $('html, body').animate({
-                            // scrollTop: $(hash).offset().top
-                            scrollTop: $(hash).offset().top
-                        }, 1000, function(){
-
-                            // Add hash (#) to URL when done scrolling (default click behavior)
-                            window.location.hash = hash;
-                        });
-                    } // End if
-                }); // End onclick function
-            }); // End document-ready function
-        </script>
+        <script src="script1.js"></script>
+        <script src="script2.js"></script>
         
     </head>
     <body data-spy="scroll" data-target="#navbar" data-offset="10"> <!--Spy on the whole website-->
@@ -113,25 +26,25 @@
                 <a class="navbar-brand btn" style="font-family: 'Roboto Condensed', sans-serif; font-size: 26px;" role="button">Live Timetable Analysis Project for Sydney Trains</a>
                 <ul class="nav nav-pills" style="font-family: 'Roboto Condensed', sans-serif; font-size: 20px;">
                     <li class="nav-item">
-                        <a class="nav-link" href="#text-1">Knowledge of Client &amp; Issues</a>
+                        <a class="nav-link" href="#knowledgeOfClientAndIssues">Knowledge of Client &amp; Issues</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#text-2">Project Aims</a>
+                        <a class="nav-link" href="#projectAims">Project Aims</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#text-3">Target Market</a>
+                        <a class="nav-link" href="#targetMarket">Target Market</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#text-4">Design Methodology</a>
+                        <a class="nav-link" href="#designMethodology">Design Methodology</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#text-5">Development Environments</a>
+                        <a class="nav-link" href="#developmentEnvironments">Development Environments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#text-6">Product Promotion</a>
+                        <a class="nav-link" href="#productPromotion">Product Promotion</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#text-7">About Us</a>
+                        <a class="nav-link" href="#aboutUs">About Us</a>
                     </li>
                 </ul>
             </nav>
@@ -150,7 +63,7 @@
             </div>
 
                 
-            <div id="text-1" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgb(255, 255, 255);">
+            <div id="knowledgeOfClientAndIssues" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgb(255, 255, 255);">
                 <div class="row">
                     <h3 class="col-sm-12 col-md-12 col-lg-12" style="padding-left:5%">The Client – Sydney Trains</h3>
                 </div>
@@ -196,7 +109,7 @@
 
             <div class="parallax-2"></div>
 
-            <div id="text-2" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgb(255, 255, 255);">
+            <div id="projectAims" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgb(255, 255, 255);">
                 <div class="row">
                     <h3 class="col-sm-12 col-md-12 col-lg-12 wow fadeInUp" style="padding-left:5%">Project Aims</h3>
                 </div>
@@ -216,7 +129,7 @@
 
             <div class="parallax-3"></div>
 
-            <div id="text-3" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
+            <div id="targetMarket" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
                 <div class="row">
                     <h3 class="col-sm-12 col-md-12 col-lg-10 wow fadeIn" style="padding-left:5%">Target Market</h3>
                 </div>
@@ -311,11 +224,11 @@
                         <img src="images/Genesee_&_Wyoming.png" alt="Genesee and Wyoming logo" width="120">
                     </div>
                 </div>
-            </div> <!--#text-3-->
+            </div> <!--#targetMarket-->
 
             <div class="parallax-4"></div>
 
-            <div id="text-4" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
+            <div id="designMethodology" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
                 <div class="row wow fadeInLeft">
                     <h2 class="col-sm-12 col-md-12 col-lg-12" style="padding-left:5%">Design Methodology - Agile</h2>
                 </div>
@@ -339,7 +252,7 @@
 
             <div class="parallax-5"></div>
 
-            <div id="text-5" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
+            <div id="developmentEnvironments" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
                 <div class="row wow fadeIn">
                     <h2 class="col-sm-12 col-md-12 col-lg-12" style="padding-left:5%">Development Environments</h2>
                 </div>
@@ -419,7 +332,7 @@
 
             <div class="parallax-6"></div>
 
-            <div id="text-6" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
+            <div id="productPromotion" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
                 <div class="row">
                     <h2 class="col-sm-12 col-md-12 col-lg-12 wow fadeInLeft" style="padding-left:5%">Product Promotion</h2>
                 </div>
@@ -458,9 +371,7 @@
                     <div class="column wow fadeInUp" data-wow-delay="0.5s">
                         <img src="images/system-6.png" onclick="openLightbox();currentSlide(6)" class="hover-shadow" style="width:200px">
                     </div>
-                    <div class="column wow fadeInUp" data-wow-delay="0.6s">
-                        <img src="images/system-7.png" onclick="openLightbox();currentSlide(7)" class="hover-shadow" style="width:200px">
-                    </div>
+                    
                 </div>
 
                 <!-- The lightbox/Lightbox -->
@@ -468,48 +379,39 @@
                     <span class="close cursor" onclick="closeLightbox()">&times;</span>
                     <div class="lightbox-content">
                         <div class="mySlides">
-                            <div class="numbertext">1 / 7</div>
+                            <div class="numbertext">1 / 6</div>
                             <img src="images/system-1.png" style="width:1200px; height: 700px;">
                         </div>
 
                         <div class="mySlides">
-                            <div class="numbertext">2 / 7</div>
+                            <div class="numbertext">2 / 6</div>
                             <img src="images/system-2.png" style="width:1200px; height: 700px;">
                         </div>
 
                         <div class="mySlides">
-                            <div class="numbertext">3 / 7</div>
+                            <div class="numbertext">3 / 6</div>
                             <img src="images/system-3.png" style="width:1200px; height: 700px;">
                         </div>
 
                         <div class="mySlides">
-                            <div class="numbertext">4 / 7</div>
+                            <div class="numbertext">4 / 6</div>
                             <img src="images/system-4.png" style="width:1200px; height: 700px;">
                         </div>
 
                         <div class="mySlides">
-                            <div class="numbertext">5 / 7</div>
+                            <div class="numbertext">5 / 6</div>
                             <img src="images/system-5.png" style="width:1200px; height: 700px;">
                         </div>
 
                         <div class="mySlides">
-                            <div class="numbertext">6 / 7</div>
+                            <div class="numbertext">6 / 6</div>
                             <img src="images/system-6.png" style="width:1200px; height: 700px;">
-                        </div>
-
-                        <div class="mySlides">
-                            <div class="numbertext">7 / 7</div>
-                            <img src="images/system-7.png" style="width:1200px; height: 700px;">
                         </div>
 
                         <!-- Next/previous controls -->
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-                        <!-- Caption text -->
-                        <!-- <div class="caption-container">
-<p id="caption"></p>
-</div> -->
                         <br>
 
                         <!-- Thumbnail image controls -->
@@ -536,20 +438,16 @@
                             <div class="column"> 
                                 <img class="demo" src="images/system-6.png" onclick="currentSlide(6)" alt="c" style="width: 160px; height: 100px;">
                             </div> 
-
-                            <div class="column"> 
-                                <img class="demo" src="images/system-7.png" onclick="currentSlide(7)" alt="d" style="width: 160px; height: 100px;">
-                            </div> 
                         </div>  <!--.row-->
 
                     </div>  <!--.lightbox-content-->
                 </div>  <!--#mylightbox .lightbox-->
 
-            </div>  <!--#text-6-->
+            </div>  <!--#productPromotion-->
 
             <div class="parallax-7"></div>
 
-            <div id="text-7" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
+            <div id="aboutUs" style="margin-top:5%; padding-top:5%; height:100%; background-color:rgba(255, 255, 255);">
                 <div class="row wow fadeIn">
                     <h2 class="col-sm-12 col-md-12 col-lg-12" style="padding-left:5%">About Us</h2>
                 </div>
@@ -665,7 +563,7 @@
                     <h5>We will respond as soon as possible.</h5>
                 </div>
 
-            </div>  <!--#text-7-->
+            </div>  <!--#aboutUs-->
 
 
         </div> <!--.container-fluid-->
@@ -679,10 +577,5 @@
         </div> 
 
     </body>
-    <script>
-        var vid = document.getElementById("websiteVideo");
-            vid.onloadeddata = function() {
-                vid.play();
-            };
-    </script>
+    
 </html>
